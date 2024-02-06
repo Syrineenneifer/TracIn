@@ -3,7 +3,6 @@
 - Syrine Enneifer 2049467
 - Giordano Pagano 2077179
 
-x<sub>t</sub>
 
 In this project is implemented the method introduced in the paper Estimating Training Data Influence by Tracing Gradient Descent (https://arxiv.org/pdf/2002.08484.pdf).
 
@@ -13,8 +12,8 @@ We aim to analyze the evolution of the loss of a test point over the training pr
 interest was utilized.
 
 ## Idealized Notion of Influence
-Given a set of n training points S = {z1, z2, . . . , zn ∈ Z}, we train the predictor by finding parameters w that minimize the training loss ΣL(w, zi), i=1,...,n via an iterative optimization procedure (such as Stochastic Gradient Descent) which utilizes one training example zt ∈ S in iteration t, updating the parameter vector from wt to wt+1. Then the idealized notion of influence of a particular training example z ∈ S on a given test example z0 ∈ Z is defined as the total reduction in loss on the test example z0 that is induced by the training process whenever the training example z is utilized,
-i.e.TracInIdeal(z, z0) = Σ[t:zt=z]   L(wt, z0) − L(wt+1, z0)
+Given a set of n training points S = {z<sub>1</sub>, z<sub>2</sub>, . . . , z<sub>n</sub> ∈ Z}, we train the predictor by finding parameters w that minimize the training loss ΣL(w, z<sub>i</sub>), i = 1,...,n via an iterative optimization procedure (such as Stochastic Gradient Descent) which utilizes one training example z<sub>t</sub> ∈ S in iteration t, updating the parameter vector from w<sub>t</sub> to w<sub>t+1</sub>. Then the idealized notion of influence of a particular training example z ∈ S on a given test example z<sub>0</sub> ∈ Z is defined as the total reduction in loss on the test example z<sub>0</sub> that is induced by the training process whenever the training example z is utilized,
+i.e.TracInIdeal(z, z<sub>0</sub>) = Σ[t:z<sub>t</sub>=z]   L(w<sub>t</sub>, z<sub>0</sub>) − L(w<sub>t+1</sub>, z0)
 
 # Example:
 This method is exemplified in the context of an image classification task, where the model's objective is to predict the subject of the test image ("zucchini" here).
