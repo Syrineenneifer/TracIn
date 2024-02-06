@@ -11,12 +11,12 @@ We aim to analyze the evolution of the loss of a test point over the training pr
 interest was utilized. 
 
 ## Example:
+This method is exemplified in the context of an image classification task, where the model's objective is to predict the subject of the test image (here the label is "zucchini").
 We would like to identify the influence of a training data point on F(data point at inference time).
 
 <img src="figures/goal.png" width="400"/>
 
-## Main Solution:
-Trace the evolution of the loss given a test and some trainig examples (using the loss function as F)
+As the model advances during training, it encounters different training examples, affecting the loss on the test image. Indeed, whenever a particular training example is visited, this leads to adjustments in the model's parameterssubsequently affecting the prediction and loss for the test example. By tracing the training example's impact throughout the training process, the change in loss or prediction for the test example can be attributed to that specific training example. Proponents, such as images of zucchinis, decrease loss, while opponents, like images of seatbelts, increase loss. For instance, an image labeled "sunglasses" serves as a proponent because it includes a seatbelt, pushing the model to better differentiate between zucchinis and seatbelts.
 
 <img src="figures/idea.png" width="800"/>
 
