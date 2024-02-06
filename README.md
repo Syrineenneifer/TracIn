@@ -14,7 +14,7 @@ interest was utilized.
 ## Idealized Notion of Influence
 Given a set of n training points S = {z<sub>1</sub>, z<sub>2</sub>, . . . , z<sub>n</sub> ∈ Z}, we train the predictor by finding parameters w that minimize the training loss ∑<sub>i</sub>L(w, z<sub>i</sub>), i = 1,...,n via an iterative optimization procedure (such as Stochastic Gradient Descent) which utilizes one training example z<sub>t</sub> ∈ S in iteration t, updating the parameter vector from w<sub>t</sub> to w<sub>t+1</sub>. Then the idealized notion of influence of a particular training example z ∈ S on a given test example z<sub>0</sub> ∈ Z is defined as the total reduction in loss on the test example z<sub>0</sub> that is induced by the training process whenever the training example z is utilized :
 
-<div style="text-align:center;">TracInIdeal(z, z<sub>0</sub>) = Σ<sub>[t:z<sub>t</sub>=z]</sub>   L(w<sub>t</sub>, z<sub>0</sub>) − L(w<sub>t+1</sub>, z<sub>0</sub>)</div>
+**TracInIdeal(z, z<sub>0</sub>) = Σ<sub>[t:z<sub>t</sub>=z]</sub>   L(w<sub>t</sub>, z<sub>0</sub>) − L(w<sub>t+1</sub>, z<sub>0</sub>)**
 
 # Example:
 This method is exemplified in the context of an image classification task, where the model's objective is to predict the subject of the test image ("zucchini" here).
