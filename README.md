@@ -11,7 +11,7 @@ We aim to analyze the evolution of the loss of a test point over the training pr
 interest was utilized. 
 
 ## Example:
-we want to identify the influence of a training data point on F(data point at inference time).
+We would like to identify the influence of a training data point on F(test point at inference time).
 
 <img src="figures/goal.png" width="400"/>
 
