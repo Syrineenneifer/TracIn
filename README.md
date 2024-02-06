@@ -6,12 +6,12 @@
 In this project is implemented the method introduced in the paper Estimating Training Data Influence by Tracing Gradient Descent (https://arxiv.org/pdf/2002.08484.pdf).
 
 # Introduction:
-We introduce a method called TracIn that computes the influence of a training example on a prediction made by the model.
-We aim to analize the evolution of the Loss of a test point over all the training process whenever the training example of
+We present a method called TracIn, designed to determine the influence of a training example on a prediction made by the model.
+We aim to analyze the evolution of the loss of a test point over the training process whenever the training example of
 interest was utilized. 
 
 ## Example:
-we want to identify the influence of a training data points on F(data point at inference time).
+we want to identify the influence of a training data point on F(data point at inference time).
 
 <img src="figures/goal.png" width="400"/>
 
