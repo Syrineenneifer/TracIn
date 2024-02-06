@@ -42,7 +42,7 @@ In the colab files of this repository we compare TracIn with Influence Functions
 # Results
 As shown in the graphs, the TracIn method is the most efficient of all, in particular the one with the same learning rate between checkpoints
 
-<img src="figures/MislabelledDataIdentification.png" width="800"/>
+<img src="figures/MislabbelledDataIdentification.PNG" width="820"/>
 
 # How to run the code
 The file extension is '.ipybn' so it can be uploaded in a colab session and the user can run each cell sequentially, in order to run the code in the right way.
