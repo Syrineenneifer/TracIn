@@ -54,4 +54,4 @@ Install the needed librairies using the following command :
 ```
 pip install torch torchvision numpy matplotlib 
 ```
-The file extension is *'.ipybn'* so it can be uploaded in a colab session and the user can run each cell sequentially.
+The file extension is '*.ipybn*' so it can be uploaded in a colab session and the user can run each cell sequentially.
