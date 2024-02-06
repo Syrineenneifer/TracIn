@@ -51,6 +51,8 @@ As shown in the graphs, the TracIn method is the most efficient of all, in parti
 <img src="figures/MislabbelledDataIdentification.PNG" width="820"/>
 
 # How to run the code
-The file extension is '.ipybn' so it can be uploaded in a colab session and the user can run each cell sequentially, in order to run the code in the right way.
-
-
+Install the needed librairies using the following command : 
+```
+pip install torch torchvision numpy matplotlib 
+```
+The file extension is '.ipybn' so it can be uploaded in a colab session and the user can run each cell sequentially.
