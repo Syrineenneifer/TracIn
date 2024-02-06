@@ -11,7 +11,7 @@ We aim to analyze the evolution of the loss of a test point over the training pr
 interest was utilized. 
 
 ## Example:
-This method is exemplified in the context of an image classification task, where the model's objective is to predict the subject of the test image (here the label is "zucchini").
+This method is exemplified in the context of an image classification task, where the model's objective is to predict the subject of the test image ("zucchini" here).
 We would like to identify the influence of a training data point on F(data point at inference time).
 
 <img src="figures/goal.png" width="400"/>
