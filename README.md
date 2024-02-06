@@ -3,6 +3,8 @@
 - Syrine Enneifer 2049467
 - Giordano Pagano 2077179
 
+x<sub>t</sub>
+
 In this project is implemented the method introduced in the paper Estimating Training Data Influence by Tracing Gradient Descent (https://arxiv.org/pdf/2002.08484.pdf).
 
 # Introduction:
