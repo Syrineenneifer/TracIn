@@ -40,7 +40,7 @@ w<sub>t+1</sub> − w<sub>t</sub> = −η<sub>t</sub>∇L(w<sub>t</sub>, z<sub>t
 Then, we arrive at the following first-order approximation for the change in the loss: 
 L( w<sub>t</sub>, z<sub>0</sub>) − L(w<sub>t+1</sub>, z<sub>0</sub>) ≈ η<sub>t</sub>∇L(w<sub>t</sub>, z<sub>0</sub>) · ∇L(w<sub>t</sub>, z<sub>t</sub>).
 We call this first-order approximation TracIn, our primary notion of influence: 
-**<p align="center">TracIn(z, z<sub>t</sub>) = ∑<sub>[t:zt=z]</sub> η<sub>t</sub>∇L(w<sub>t</sub>, z<sub>0</sub>) · ∇L(w<sub>t</sub>, z<sub>t</sub>).</p>**
+**<p align="center">TracIn(z, z') = ∑<sub>[t:zt=z]</sub> η<sub>t</sub>∇L(w<sub>t</sub>, z') · ∇L(w<sub>t</sub>, z<sub>t</sub>).</p>**
 
 We then faced the next problem: in practice, the test example remains unknown during training, presenting a challenge. However, this limitation can be addressed by leveraging the checkpoints produced by the learning algorithm, providing a snapshot of the training process. 
 
