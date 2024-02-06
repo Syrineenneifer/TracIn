@@ -26,7 +26,7 @@ TracIn is simple to implement; all it needs is the ability to work with gradient
 functions.
 
 # Idealized Notion of Influence
-Given a set of n training points S = {z1, z2, . . . , zn ∈ Z}, we train the predictor by finding parameters w that minimize the training loss Σ L(w, zi), i=1,...,n via an iterative optimization procedure (such as Stochastic Gradient Descent) which utilizes one training example zt ∈ S in iteration t, updating the parameter vector from wt to wt+1. Then the idealized notion of influence of a particular training example z ∈ S on a given test example z0 ∈ Z is defined as the total reduction in loss on the test example z0 that is induced by the training process whenever the training example z is utilized,
+Given a set of n training points S = {z1, z2, . . . , zn ∈ Z}, we train the predictor by finding parameters w that minimize the training loss   Σ L(w, zi), i=1,...,n via an iterative optimization procedure (such as Stochastic Gradient Descent) which utilizes one training example zt ∈ S in iteration t, updating the parameter vector from wt to wt+1. Then the idealized notion of influence of a particular training example z ∈ S on a given test example z0 ∈ Z is defined as the total reduction in loss on the test example z0 that is induced by the training process whenever the training example z is utilized,
 i.e.TracInIdeal(z, z0) = Σ[t:zt=z]   L(wt, z0) − L(wt+1, z0)
 
 # Proponents and Opponents
