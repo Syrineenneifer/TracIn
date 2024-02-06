@@ -41,6 +41,7 @@ Additionally, another challenge arises from the learning algorithm's simultaneou
 
 # Evaluations
 To underscore TracIn's effectiveness, we contrast it with Influence Functions and the Representer Point Selection method. Specifically, we analyze their performance in identifying outliers by assessing the self-influence score, which represents the influence of a training point on its own prediction. Since mislabelled data points are strong proponents for themselves, this characteristic enables us to effectively showcase TracIn's efficiency in swiftly identifying them.
+
 (In the colab file there are also implementations of Influence Functions and Representer Point Selection)
 
 # Results
