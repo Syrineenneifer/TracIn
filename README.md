@@ -33,9 +33,18 @@ By tracing the training example's impact throughout the training process, the ch
 TracIn is simple to implement; all it needs is the ability to work with gradients, checkpoints, and loss functions.
 
 # Implementation
-In practice, the test example remains unknown during training, presenting a challenge. However, this limitation can be addressed by leveraging the checkpoints produced by the learning algorithm, providing a snapshot of the training process. 
+Starting from the concept of Ideal TracIn, we can approximate the change in the loss of a test example in a given iteration t via a simple first-order approximation: 
+L(w<sub>t+1</sub>, z<sub>0</sub>) = L(w<sub>t</sub>, z<sub>0</sub>) + ∇L(w<sub>t</sub>, z<sub>0</sub>)(w<sub>t+1</sub> − w<sub>t</sub>) + O(|w<sub>t+1</sub> − w<sub>t</sub>|^2).
+Now, if Stochastic Gradient Descent is utilized in training the model, using the training point zt at iteration t, then the change in parameters is:
+w<sub>t+1</sub> − w<sub>t</sub> = −η<sub>t</sub>∇L(w<sub>t</sub>, z<sub>t</sub>) (where η<sub>t</sub> is the step size in iteration t).
+Then, we arrive at the following first-order approximation for the change in the loss: 
+L( w<sub>t</sub>, z<sub>0</sub>) − L(w<sub>t+1</sub>, z<sub>0</sub>) ≈ η<sub>t</sub>∇L(w<sub>t</sub>, z<sub>0</sub>) · ∇L(w<sub>t</sub>, z<sub>t</sub>).
+We call this first-order approximation TracIn, our primary notion of influence: 
+**<p align="center">TracIn(z, z<sub>t</sub>) = ∑<sub>[t:zt=z]</sub> η<sub>t</sub>∇L(w<sub>t</sub>, z<sub>0</sub>) · ∇L(w<sub>t</sub>, z<sub>t</sub>).</p>**
 
-Additionally, another challenge arises from the learning algorithm's simultaneous visitation of multiple points rather than individual ones, necessitating a method to discern the relative impacts of each training example. This can be achieved through the application of Stochastic Gradient Descent. These two strategies collectively constitute the TracIn method, which can be simplified to a dot product of the loss gradients of both the test and training examples, adjusted by the learning rate, and aggregated across checkpoints.
+We then faced the next problem: in practice, the test example remains unknown during training, presenting a challenge. However, this limitation can be addressed by leveraging the checkpoints produced by the learning algorithm, providing a snapshot of the training process. 
+
+Additionally, another challenge arises from the learning algorithm's simultaneous visitation of multiple points rather than individual ones, necessitating a method to discern the relative impacts of each training example. This can be achieved through the application of Stochastic Gradient Descent. These two strategies collectively constitute the TracIn method:
 
 <img src="figures/tracincp.png" width="800"/>
 
