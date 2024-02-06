@@ -18,7 +18,7 @@ We would like to identify the influence of a training data point on F(data point
 
 As the model advances during training, it encounters different training examples, affecting the loss on the test image. Indeed, whenever a particular training example is visited, this leads to adjustments in the model's parameters, subsequently affecting the prediction and loss for the test example. 
 
-By tracing the training example's impact throughout the training process, the change in loss or prediction for the test example can be attributed to that specific training example. Proponents, such as images of zucchinis, decrease loss, while opponents, like images of seatbelts, increase loss. For instance, an image labeled "sunglasses" serves as a proponent because it includes a seatbelt, pushing the model to better differentiate between zucchinis and seatbelts.
+By tracing the training example's impact throughout the training process, the change in loss for the test example can be attributed to that specific training example. Proponents, such as images of zucchinis, decrease loss, while opponents, like images of seatbelts, increase loss. For instance, an image labeled "sunglasses" serves as a proponent because it includes a seatbelt, pushing the model to better differentiate between zucchinis and seatbelts.
 
 <img src="figures/idea.png" width="800"/>
 
