@@ -34,7 +34,7 @@ TracIn is simple to implement; all it needs is the ability to work with gradient
 
 # Implementation
 Starting from the concept of Ideal TracIn, we can approximate the change in the loss of a test example in a given iteration t via a simple first-order approximation: 
-L(w<sub>t+1</sub>, z<sub>0</sub>) = L(w<sub>t</sub>, z<sub>0</sub>) + ∇L(w<sub>t</sub>, z<sub>0</sub>) . (w<sub>t+1</sub> − w<sub>t</sub>) + O(|w<sub>t+1</sub> − w<sub>t</sub>|<sup>2</sup>).
+L(w<sub>t+1</sub>, z<sub>0</sub>) = L(w<sub>t</sub>, z<sub>0</sub>) + ∇L(w<sub>t</sub>, z<sub>0</sub>) · (w<sub>t+1</sub> − w<sub>t</sub>) + O(|w<sub>t+1</sub> − w<sub>t</sub>|<sup>2</sup>).
 Now, since we employ Stochastic Gradient Descent as our optimizer during traning, using the training point z<sub>t</sub> at iteration t, the change in parameters is:
 w<sub>t+1</sub> − w<sub>t</sub> = −η<sub>t</sub>∇L(w<sub>t</sub>, z<sub>t</sub>) (where η<sub>t</sub> is the step size at iteration t).
 Then, we arrive at the following first-order approximation for the change in the loss: 
