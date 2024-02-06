@@ -32,16 +32,19 @@ TracIn is simple to implement; all it needs is the ability to work with gradient
 functions.
 
 # Implementation
-First of all we don't know what are the parameters at timestep t+1 in timestep t, so we have to approximate the computation of the second term in the previous formula. Then we have to face up that at training time we can't access to testing samples, so the main idea is to store in memory the weights of our model at every timestep; but for very long training processes this would be infeasible; so the solution is to use CHECKPOINTS.
-We will use only few parameter weights from all the parameters that we can store over all the training process; and using this checkpoints, finally, we can use this formula:
+In practice, the test example remains unknown during training, presenting a challenge. However, this limitation can be addressed by leveraging the checkpoints produced by the learning algorithm, providing a snapshot of the training process. 
+
+Additionally, another challenge arises from the learning algorithm's simultaneous visitation of multiple points rather than individual ones, necessitating a method to discern the relative impacts of each training example. This can be achieved through the application of Stochastic Gradient Descent. These two strategies collectively constitute the TracIn method, which can be simplified to a dot product of the loss gradients of both the test and training examples, adjusted by the learning rate, and aggregated across checkpoints.
+
 <img src="figures/tracincp.png" width="800"/>
 
 # Evaluations
-In the colab files of this repository we compare TracIn with Influence Functions and the Representer Point Selection method, highlighting the performance of our method compared to the others.
+To underscore TracIn's effectiveness, we contrast it with Influence Functions and the Representer Point Selection method. Specifically, we analyze their performance in identifying outliers by assessing the self-influence score, which represents the influence of a training point on its own prediction. Since mislabelled data points are strong proponents for themselves, this characteristic enables us to effectively showcase TracIn's efficiency in swiftly identifying them.
+
 ( In the colab file there are also implementations of Influence Functions and Representer Point Selection )
 
 # Results
-As shown in the graphs, the TracIn method is the most efficient of all, in particular the one with the same learning rate between checkpoints
+As shown in the graphs, the TracIn method is the most efficient of all, in particular when the learning rate is the same across checkpoints.
 
 <img src="figures/MislabbelledDataIdentification.PNG" width="820"/>
 
